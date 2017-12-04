@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { Extract } from '../models/Extract';
+import { Extract } from '../models/extract';
 
 @Component({
   selector: 'app-home',
