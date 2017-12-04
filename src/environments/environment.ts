@@ -6,5 +6,7 @@
 export const environment = {
   production: false,
 
-  extractUrl: 'http://localhost:3000/api/review/extract'
+  extractUrl: 'http://localhost:3000/api/review/extract',
+  transformUrl: 'http://localhost:3000/api/review/transform',
+  loadUrl: 'http://localhost:3000/api/review/load',
 };

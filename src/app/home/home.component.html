@@ -1,10 +1,12 @@
 <mat-card>
     <button mat-raised-button (click)="getExtract()">Extract</button>
-    <button mat-raised-button (click)="transform()" color="primary">Transform</button>
-    <button mat-raised-button (click)="load()" color="accent">Load</button>
+    <button mat-raised-button (click)="getTransform()" color="primary">Transform</button>
+    <button mat-raised-button (click)="getLoad()" color="accent">Load</button>
 </mat-card>
 
 <!-- NOTE: Tymczasowe wyświetlenie danych-->
 <div *ngIf="extract">
-    {{ extract | json }}
+    <div *ngIf="extract">Extract: {{ extract | json }}</div>
+    <div *ngIf="transform">Transform: {{ transform | json }}</div>
+    <div *ngIf="load">Load: {{ load | json }}</div>
 </div>

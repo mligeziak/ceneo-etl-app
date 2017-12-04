@@ -12,4 +12,13 @@ export class ApiService {
   public extract(id: number): Observable<Extract> {
     return this.http.get<Extract>(environment.extractUrl + '/' + id);
   }
+
+  // NOTE: Generic type of Observable<...> is temporary. To future change.
+  public transform(): Observable<{ reviewsCount, time }> {
+    return this.http.get<{ reviewsCount, time }>(environment.transformUrl);
+  }
+
+  public load(): Observable<{ reviewsCount }> {
+    return this.http.get<{ reviewsCount }>(environment.loadUrl);
+  }
 }

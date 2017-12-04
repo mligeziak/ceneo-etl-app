@@ -9,6 +9,8 @@ import { Extract } from '../models/extract';
 })
 export class HomeComponent {
   public extract: Extract;
+  public transform: Extract;
+  public load;
 
   public id: number = 50851295;
 
@@ -21,11 +23,15 @@ export class HomeComponent {
     });
   }
 
-  public transform(): void {
-
+  public getTransform(): void {
+    this.apiService.transform().subscribe((response: Extract) => {
+      this.transform = response;
+    });
   }
 
-  public load(): void {
-
+  public getLoad(): void {
+    this.apiService.load().subscribe(response => {
+      this.load = response;
+    });
   }
 }
