@@ -1,17 +1,10 @@
 <mat-card>
-    <button mat-button>All</button>
-    <button mat-raised-button>Of</button>
-    <button mat-raised-button color="primary">The</button>
-    <button mat-raised-button color="accent">Buttons</button>
-    <br>
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+    <button mat-raised-button (click)="getExtract()">Extract</button>
+    <button mat-raised-button (click)="transform()" color="primary">Transform</button>
+    <button mat-raised-button (click)="load()" color="accent">Load</button>
 </mat-card>
-<span class="done">
-    <button mat-fab>
-        <mat-icon>check circle</mat-icon>
-    </button>
-</span>
+
+<!-- NOTE: Tymczasowe wyświetlenie danych-->
+<div *ngIf="extract">
+    {{ extract | json }}
+</div>
