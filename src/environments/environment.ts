@@ -4,5 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  extractUrl: 'http://localhost:3000/api/review/extract',
+  transformUrl: 'http://localhost:3000/api/review/transform',
+  loadUrl: 'http://localhost:3000/api/review/load',
 };
