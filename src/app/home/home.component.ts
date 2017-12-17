@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { Extract } from '../models/extract';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +7,8 @@ import { Extract } from '../models/extract';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  public extract: Extract;
-  public transform: Extract;
+  public extract;
+  public transform;
   public load;
 
   public id: number = 50851295;
@@ -18,20 +17,23 @@ export class HomeComponent {
   }
 
   public getExtract(): void {
-    this.apiService.extract(this.id).subscribe((response: Extract) => {
+    this.apiService.extract(this.id).subscribe((response) => {
       this.extract = response;
     });
   }
 
   public getTransform(): void {
-    this.apiService.transform().subscribe((response: Extract) => {
+    this.apiService.transform().subscribe((response) => {
       this.transform = response;
     });
   }
 
   public getLoad(): void {
-    this.apiService.load().subscribe(response => {
+    this.apiService.load().subscribe((response) => {
       this.load = response;
     });
+  }
+
+  public getReviews(): void {
   }
 }
