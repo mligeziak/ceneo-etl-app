@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../services/api.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss']
 })
-export class HomeComponent {
+export class ProductComponent {
   public extract;
   public transform;
   public load;

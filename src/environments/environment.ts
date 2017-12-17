@@ -9,4 +9,5 @@ export const environment = {
   extractUrl: 'http://localhost:3000/api/review/extract',
   transformUrl: 'http://localhost:3000/api/review/transform',
   loadUrl: 'http://localhost:3000/api/review/load',
+  searchUrl: 'http://localhost:3000/api/product/search',
 };

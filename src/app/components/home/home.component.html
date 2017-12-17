@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-form-field>
+        <input matInput placeholder="Search product..." [(ngModel)]="query" (keyup)="search()">
+    </mat-form-field>
+</mat-card>
+
+<mat-card *ngIf="results">
+    {{ results | json }}
+</mat-card>
