@@ -9,7 +9,7 @@ export class ApiService {
   }
 
   public extract(id: number): Observable<{ reviewsCount, pageCount, time }> {
-    return this.http.get<{ reviewsCount, pageCount, time }>(environment.extractUrl + '/' + id);
+    return this.http.get<{ reviewsCount, pageCount, time }>(`${environment.extractUrl}/${id}`);
   }
 
   public transform(): Observable<{ reviewsCount, time }> {
@@ -18,5 +18,9 @@ export class ApiService {
 
   public load(): Observable<{ reviewsCount }> {
     return this.http.get<{ reviewsCount }>(environment.loadUrl);
+  }
+
+  public search(query: string): Observable<{ results }> {
+    return this.http.get<{ results }>(`${environment.searchUrl}/${query}`);
   }
 }
