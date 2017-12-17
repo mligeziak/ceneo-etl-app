@@ -1,5 +1,5 @@
 <mat-card>
-    <button mat-raised-button (click)="getExtract()" [color]="warn">Extract</button>
+    <button mat-raised-button (click)="getExtract()" [color]="warn" [disabled]="!ceneoId">Extract</button>
     <button mat-raised-button (click)="getTransform()" [color]="primary" [disabled]="!extract">Transform</button>
     <button mat-raised-button (click)="getLoad()" [color]="accent" [disabled]="!transform">Load</button>
     <button mat-raised-button (click)="getReviews()" [disabled]="!load">Show reviews</button>

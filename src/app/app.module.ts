@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
+import { ResultComponent } from './components/home/result/result.component';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    ResultComponent
   ],
   imports: [
     HttpClientModule,

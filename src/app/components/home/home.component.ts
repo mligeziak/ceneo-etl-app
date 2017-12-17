@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { ResultComponent } from './result/result.component';
 import "rxjs/add/operator/debounceTime";
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  entryComponents: [ResultComponent]
 })
 export class HomeComponent implements OnInit {
-  public results;
+  public response: object;
   public queryFormControl = new FormControl();
 
   constructor(public apiService: ApiService) {
@@ -24,7 +26,7 @@ export class HomeComponent implements OnInit {
   public search(value: string) {
     this.apiService.search(value)
       .subscribe((response) => {
-        this.results = response;
+        this.response = response;
       });
   }
 }

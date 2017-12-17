@@ -7,7 +7,7 @@ import { ProductComponent } from './components/product/product.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'product', component: ProductComponent }
+  { path: 'product/:ceneoId', component: ProductComponent }
 ];
 
 @NgModule({

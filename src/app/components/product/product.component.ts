@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -6,18 +8,26 @@ import { ApiService } from '../../services/api.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
   public extract;
   public transform;
   public load;
+  public ceneoId: number;
+  private paramsSubsription;
 
-  public id: number = 50851295;
-
-  constructor(public apiService: ApiService) {
+  constructor(public route: ActivatedRoute, public apiService: ApiService) {
+  }
+  
+  ngOnInit() {
+    this.paramsSubsription = this.route.params.subscribe(
+      params => {
+        this.ceneoId = params['ceneoId'];
+      }
+    );
   }
 
   public getExtract(): void {
-    this.apiService.extract(this.id).subscribe((response) => {
+    this.apiService.extract(this.ceneoId).subscribe((response) => {
       this.extract = response;
     });
   }
