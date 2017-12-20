@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
   public extract;
   public transform;
   public load;
+  public reviews;
   public ceneoId: number;
   private paramsSubsription;
 
@@ -45,5 +46,8 @@ export class ProductComponent implements OnInit {
   }
 
   public getReviews(): void {
+    this.apiService.getReviews(this.ceneoId).subscribe((response) => {
+      this.reviews = response;
+    });
   }
 }

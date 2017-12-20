@@ -23,4 +23,8 @@ export class ApiService {
   public search(query: string): Observable<{ results }> {
     return this.http.get<{ results }>(`${environment.searchUrl}/${query}`);
   }
+
+  public getReviews(id: number): Observable<{ reviews }> {
+    return this.http.get<{ reviews }>(`${environment.getReviewsUrl}/${id}`);
+  }
 }

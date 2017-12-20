@@ -10,4 +10,5 @@ export const environment = {
   transformUrl: 'http://localhost:3000/api/review/transform',
   loadUrl: 'http://localhost:3000/api/review/load',
   searchUrl: 'http://localhost:3000/api/product/search',
+  getReviewsUrl: 'http://localhost:3000/api/review',
 };
