@@ -2,14 +2,23 @@
     <button mat-raised-button (click)="getExtract()" color="warn" [disabled]="!ceneoId">Extract</button>
     <button mat-raised-button (click)="getTransform()" color="primary" [disabled]="!extract">Transform</button>
     <button mat-raised-button (click)="getLoad()" color="accent" [disabled]="!transform">Load</button>
-    <button mat-raised-button (click)="getReviews()" [disabled]="!load">Show reviews</button>
+    <button mat-raised-button (click)="getReviews()" color="primary">Update reviews</button>
 </mat-card>
 
 <mat-spinner *ngIf="loading"></mat-spinner>
 
 <mat-card *ngIf="extract && !loading">
-    <div *ngIf="extract">Extract: {{ extract | json }}</div>
-    <div *ngIf="transform">Transform: {{ transform | json }}</div>
-    <div *ngIf="load">Load: {{ load | json }}</div>
-    <div *ngIf="reviews">Reviews: {{ reviews | json }}</div>
+    <div *ngIf="extract"><strong>Extract:</strong> reviewsCount: {{ extract?.reviewsCount }}, pageCount: {{ extract?.pageCount }}, time: {{ extract?.time }}</div>
+    <div *ngIf="transform"><strong>Transform:</strong> reviewsCount: {{ transform?.reviewsCount }}, time: {{ transform?.time }}</div>
+    <div *ngIf="load"><strong>Load:</strong> reviewsCount: {{ load?.reviewsCount }}, time: {{ load?.time }}</div>
 </mat-card>
+
+<div class="reviews" *ngIf="!loading">
+    <mat-card *ngFor="let review of reviews?.reviews">
+        <mat-card-title>{{ review.reviewerName }} <mat-icon>done</mat-icon>{{ review.recommended }}</mat-card-title>
+        <mat-card-subtitle>Rating: {{ review.rating }}/5 | Created at: {{ review.date }}</mat-card-subtitle>
+        <mat-card-content>
+            <p>{{ review.content }}</p>
+        </mat-card-content>
+    </mat-card>
+</div>
