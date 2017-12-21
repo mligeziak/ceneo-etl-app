@@ -5,4 +5,18 @@ mat-spinner {
   mat-card {
     text-align: left;
   }
+  .recommended, .not-recommended {
+    font-size: 12px;
+    .mat-icon {
+      height: 14px;
+      width: 17px;
+      font-size: 12px;
+    }
+  }
+  .recommended {
+    color: #4cea52;
+  }
+  .not-recommended {
+    color: #ea4c4c;
+  }
 }

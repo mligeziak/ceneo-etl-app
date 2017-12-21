@@ -15,10 +15,26 @@
 
 <div class="reviews" *ngIf="!loading">
     <mat-card *ngFor="let review of reviews?.reviews">
-        <mat-card-title>{{ review.reviewerName }} <mat-icon>done</mat-icon>{{ review.recommended }}</mat-card-title>
+        <mat-card-title>
+            {{ review.reviewerName }}
+            <span *ngIf="review.recommended == 'Polecam'" class="recommended"><mat-icon>done</mat-icon>{{ review.recommended }}</span>
+            <span *ngIf="review.recommended == 'Nie polecam'" class="not-recommended"><mat-icon>clear</mat-icon>{{ review.recommended }}</span>
+        </mat-card-title>
         <mat-card-subtitle>Rating: {{ review.rating }}/5 | Created at: {{ review.date }}</mat-card-subtitle>
         <mat-card-content>
             <p>{{ review.content }}</p>
+            <div *ngIf="review.pros.length" class="pros-cons">
+                <strong>Zalety:</strong>
+                <ul>
+                    <li *ngFor="let pro of review?.pros">{{ pro }}</li>
+                </ul>
+            </div>
+            <div *ngIf="review.cons.length" class="pros-cons">
+                <strong>Wady:</strong>
+                <ul>
+                    <li *ngFor="let con of review?.cons">{{ con }}</li>
+                </ul>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>
