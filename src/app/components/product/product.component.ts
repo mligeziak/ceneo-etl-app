@@ -14,6 +14,7 @@ export class ProductComponent implements OnInit {
   public load;
   public reviews;
   public ceneoId: number;
+  public loading: boolean = false;
   private paramsSubsription;
 
   constructor(public route: ActivatedRoute, public apiService: ApiService) {
@@ -28,26 +29,34 @@ export class ProductComponent implements OnInit {
   }
 
   public getExtract(): void {
+    this.loading = true;
     this.apiService.extract(this.ceneoId).subscribe((response) => {
       this.extract = response;
+      this.loading = false;
     });
   }
 
   public getTransform(): void {
+    this.loading = true;
     this.apiService.transform().subscribe((response) => {
       this.transform = response;
+      this.loading = false;
     });
   }
 
   public getLoad(): void {
+    this.loading = true;
     this.apiService.load().subscribe((response) => {
       this.load = response;
+      this.loading = false;
     });
   }
 
   public getReviews(): void {
+    this.loading = true;
     this.apiService.getReviews(this.ceneoId).subscribe((response) => {
       this.reviews = response;
+      this.loading = false;
     });
   }
 }
