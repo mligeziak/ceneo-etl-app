@@ -24,6 +24,10 @@ export class ApiService {
     return this.http.get<{ results }>(`${environment.searchUrl}/${query}`);
   }
 
+  public getProduct(ceneoId: number): Observable<{ product }> {
+    return this.http.get<{ product }>(`${environment.getProductUrl}/${ceneoId}`);
+  }
+
   public getReviews(id: number): Observable<{ reviews }> {
     return this.http.get<{ reviews }>(`${environment.getReviewsUrl}/${id}`);
   }

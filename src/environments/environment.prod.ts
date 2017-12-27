@@ -5,5 +5,6 @@ export const environment = {
   transformUrl: 'http://api.mligeza.pl/api/review/transform',
   loadUrl: 'http://api.mligeza.pl/api/review/load',
   searchUrl: 'http://api.mligeza.pl/api/product/search',
-  getReviewsUrl: 'http://api.mligeza.pl/api/review',
+  getProductUrl: 'http://api.mligeza.pl/api/product',
+  getReviewsUrl: 'http://api.mligeza.pl/api/review'
 };

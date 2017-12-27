@@ -1,8 +1,14 @@
-<mat-card>
+<mat-card *ngIf="product">
+    <div class="product-info">
+        <img *ngIf="product.imgUrl" src="{{ product?.imgUrl }}" alt="{{ product?.name }}">
+        <h1>{{ product?.name }} <small>({{ product?.ceneoId }})</small></h1>
+        <h4>Category: {{ product?.category }}</h4>
+        <p>{{ product?.description }}</p>
+    </div>
     <button mat-raised-button (click)="getExtract()" color="warn" [disabled]="!ceneoId">Extract</button>
     <button mat-raised-button (click)="getTransform()" color="primary" [disabled]="!extract">Transform</button>
     <button mat-raised-button (click)="getLoad()" color="accent" [disabled]="!transform">Load</button>
-    <button mat-raised-button (click)="getReviews()" color="primary">Update reviews</button>
+    <button mat-raised-button (click)="getReviews()" color="primary">Show reviews</button>
 </mat-card>
 
 <mat-spinner *ngIf="loading"></mat-spinner>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ApiService } from '../../services/api.service';
@@ -8,10 +8,11 @@ import { ApiService } from '../../services/api.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, AfterContentInit {
   public extract;
   public transform;
   public load;
+  public product;
   public reviews;
   public ceneoId: number;
   public loading: boolean = false;
@@ -26,6 +27,18 @@ export class ProductComponent implements OnInit {
         this.ceneoId = params['ceneoId'];
       }
     );
+  }
+
+  ngAfterContentInit() {
+    this.getProduct();
+  }
+
+  public getProduct(): void {
+    this.loading = true;
+    this.apiService.getProduct(this.ceneoId).subscribe((response) => {
+      this.product = response;
+      this.loading = false;
+    });
   }
 
   public getExtract(): void {
