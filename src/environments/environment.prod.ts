@@ -1,10 +1,10 @@
 export const environment = {
   production: true,
 
-  extractUrl: 'http://api.mligeza.pl/api/review/extract',
-  transformUrl: 'http://api.mligeza.pl/api/review/transform',
-  loadUrl: 'http://api.mligeza.pl/api/review/load',
-  searchUrl: 'http://api.mligeza.pl/api/product/search',
-  getProductUrl: 'http://api.mligeza.pl/api/product',
-  getReviewsUrl: 'http://api.mligeza.pl/api/review'
+  extractUrl: 'https://api.mligeza.pl/api/review/extract',
+  transformUrl: 'https://api.mligeza.pl/api/review/transform',
+  loadUrl: 'https://api.mligeza.pl/api/review/load',
+  searchUrl: 'https://api.mligeza.pl/api/product/search',
+  getProductUrl: 'https://api.mligeza.pl/api/product',
+  getReviewsUrl: 'https://api.mligeza.pl/api/review'
 };
