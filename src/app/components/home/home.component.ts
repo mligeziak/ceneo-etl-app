@@ -12,6 +12,7 @@ import "rxjs/add/operator/debounceTime";
 })
 export class HomeComponent implements OnInit {
   public response: object;
+  public loading: boolean = false;
   public queryFormControl = new FormControl();
 
   constructor(public apiService: ApiService) {
@@ -24,9 +25,11 @@ export class HomeComponent implements OnInit {
   }
 
   public search(value: string) {
+    this.loading = true;
     this.apiService.search(value)
       .subscribe((response) => {
         this.response = response;
+        this.loading = false;
       });
   }
 }

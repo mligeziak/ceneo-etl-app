@@ -4,7 +4,9 @@
     </mat-form-field>
 </mat-card>
 
-<mat-grid-list cols="2" rowHeight="150px">
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<mat-grid-list *ngIf="!loading" cols="2" rowHeight="150px">
     <mat-grid-tile *ngFor="let result of response?.results">
         <result [result]="result"></result>
     </mat-grid-tile>
