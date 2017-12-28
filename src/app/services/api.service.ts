@@ -31,4 +31,8 @@ export class ApiService {
   public getReviews(id: number): Observable<{ reviews }> {
     return this.http.get<{ reviews }>(`${environment.getReviewsUrl}/${id}`);
   }
+
+  public dropDatabse(): Observable<{ result }> {
+    return this.http.get<{ result }>(environment.dropDatabaseUrl);
+  }
 }

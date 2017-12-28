@@ -72,4 +72,17 @@ export class ProductComponent implements OnInit, AfterContentInit {
       this.loading = false;
     });
   }
+
+  public dropDatabase(): void {
+    this.loading = true;
+    this.apiService.dropDatabse().subscribe((response) => {
+      this.extract = null;
+      this.transform = null;
+      this.load = null
+      this.product = null;
+      this.reviews = null;
+      this.loading = false;
+      this.getProduct();
+    });
+  }
 }

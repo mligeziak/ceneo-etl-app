@@ -11,5 +11,6 @@ export const environment = {
   loadUrl: 'http://localhost:3000/api/review/load',
   searchUrl: 'http://localhost:3000/api/product/search',
   getProductUrl: 'http://localhost:3000/api/product',
-  getReviewsUrl: 'http://localhost:3000/api/review'
+  getReviewsUrl: 'http://localhost:3000/api/review',
+  dropDatabaseUrl: 'http://localhost:3000/api/review/drop-database'
 };

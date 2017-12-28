@@ -5,10 +5,15 @@
         <h4>Category: {{ product?.category }}</h4>
         <p>{{ product?.description }}</p>
     </div>
-    <button mat-raised-button (click)="getExtract()" color="warn" [disabled]="!ceneoId">Extract</button>
-    <button mat-raised-button (click)="getTransform()" color="primary" [disabled]="!extract">Transform</button>
-    <button mat-raised-button (click)="getLoad()" color="accent" [disabled]="!transform">Load</button>
-    <button mat-raised-button (click)="getReviews()" color="primary">Show reviews</button>
+    <div class="buttons-group">
+        <button mat-raised-button (click)="getExtract()" color="warn" [disabled]="!ceneoId">Extract</button>
+        <button mat-raised-button (click)="getTransform()" color="primary" [disabled]="!extract">Transform</button>
+        <button mat-raised-button (click)="getLoad()" color="accent" [disabled]="!transform">Load</button>
+    </div>
+    <div class="buttons-group">
+        <button mat-raised-button (click)="getReviews()" color="primary">Show reviews</button>
+        <button mat-raised-button (click)="dropDatabase()" color="warn">Clear database</button>
+    </div>
 </mat-card>
 
 <mat-spinner *ngIf="loading"></mat-spinner>
