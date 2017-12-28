@@ -7,5 +7,6 @@ export const environment = {
   searchUrl: 'https://api.mligeza.pl/api/product/search',
   getProductUrl: 'https://api.mligeza.pl/api/product',
   getReviewsUrl: 'https://api.mligeza.pl/api/review',
-  dropDatabaseUrl: 'https://api.mligeza.pl/api/review/drop-database'
+  dropDatabaseUrl: 'https://api.mligeza.pl/api/review/drop-database',
+  getCSVUrl: 'https://api.mligeza.pl/api/review/get-csv'
 };

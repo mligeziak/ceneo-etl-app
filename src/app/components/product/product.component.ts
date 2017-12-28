@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { saveAs } from "file-saver";
 
 import { ApiService } from '../../services/api.service';
 
@@ -83,6 +84,14 @@ export class ProductComponent implements OnInit, AfterContentInit {
     this.loading = true;
     this.apiService.getReviews(this.ceneoId).subscribe((response) => {
       this.reviews = response;
+      this.loading = false;
+    });
+  }
+
+  public getCSV(): void {
+    this.loading = true;
+    this.apiService.getCSV(this.ceneoId).subscribe((blob) => {
+      saveAs(blob, 'reviews.csv');
       this.loading = false;
     });
   }

@@ -13,6 +13,7 @@
     </div>
     <div class="buttons-group">
         <button mat-raised-button (click)="getReviews()" color="accent">Show reviews</button>
+        <button mat-raised-button (click)="getCSV()" color="primary">CSV</button>
         <button mat-raised-button (click)="dropDatabase()" color="warn">Clear database</button>
     </div>
 </mat-card>
@@ -32,7 +33,7 @@
             <span *ngIf="review.recommended == 'Polecam'" class="recommended"><mat-icon>done</mat-icon>{{ review.recommended }}</span>
             <span *ngIf="review.recommended == 'Nie polecam'" class="not-recommended"><mat-icon>clear</mat-icon>{{ review.recommended }}</span>
         </mat-card-title>
-        <mat-card-subtitle>Rating: {{ review.rating }}/5 | Created at: {{ review.date }}</mat-card-subtitle>
+        <mat-card-subtitle>Rating: {{ review.rating }}/5 | Created at: {{ review.date }} | Ocena przydatna: {{ review?.voteYes }} | Ocena nieprzydatna: {{ review?.voteNo }}</mat-card-subtitle>
         <mat-card-content>
             <p>{{ review.content }}</p>
             <div *ngIf="review.pros.length" class="pros-cons">

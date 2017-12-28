@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -34,5 +36,11 @@ export class ApiService {
 
   public dropDatabse(): Observable<{ result }> {
     return this.http.get<{ result }>(environment.dropDatabaseUrl);
+  }
+
+  public getCSV(ceneoId: number): Observable<Blob> {
+    return this.http.get(`${environment.getCSVUrl}/${ceneoId}`, {
+      responseType: 'blob'
+    });
   }
 }
