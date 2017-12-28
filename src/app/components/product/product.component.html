@@ -9,9 +9,10 @@
         <button mat-raised-button (click)="getExtract()" color="warn" [disabled]="!ceneoId">Extract</button>
         <button mat-raised-button (click)="getTransform()" color="primary" [disabled]="!extract">Transform</button>
         <button mat-raised-button (click)="getLoad()" color="accent" [disabled]="!transform">Load</button>
+        <button mat-raised-button (click)="getETL()" color="primary" [disabled]="!ceneoId">ETL</button>
     </div>
     <div class="buttons-group">
-        <button mat-raised-button (click)="getReviews()" color="primary">Show reviews</button>
+        <button mat-raised-button (click)="getReviews()" color="accent">Show reviews</button>
         <button mat-raised-button (click)="dropDatabase()" color="warn">Clear database</button>
     </div>
 </mat-card>

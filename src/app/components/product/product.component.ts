@@ -65,6 +65,20 @@ export class ProductComponent implements OnInit, AfterContentInit {
     });
   }
 
+  public getETL(): void {
+    this.loading = true;
+    this.apiService.extract(this.ceneoId).subscribe((response) => {
+      this.extract = response;
+      this.apiService.transform().subscribe((response) => {
+        this.transform = response;
+        this.apiService.load().subscribe((response) => {
+          this.load = response;
+          this.loading = false;
+        });
+      });
+    });
+  }
+
   public getReviews(): void {
     this.loading = true;
     this.apiService.getReviews(this.ceneoId).subscribe((response) => {
