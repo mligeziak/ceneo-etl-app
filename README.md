@@ -8,6 +8,8 @@
 
 ## Development
 
+http://localhost:4200/
+
 `npm start`
 
 ## Production
